@@ -1,0 +1,84 @@
+﻿@model newBlog.Models.Author
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Author</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorUserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorUserName)
+            @Html.ValidationMessageFor(model => model.AuthorUserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorFirstName)
+            @Html.ValidationMessageFor(model => model.AuthorFirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorLastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorLastName)
+            @Html.ValidationMessageFor(model => model.AuthorLastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorEmal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorEmal)
+            @Html.ValidationMessageFor(model => model.AuthorEmal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorDOB)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorDOB)
+            @Html.ValidationMessageFor(model => model.AuthorDOB)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorPic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorPic)
+            @Html.ValidationMessageFor(model => model.AuthorPic)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorBio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorBio)
+            @Html.ValidationMessageFor(model => model.AuthorBio)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

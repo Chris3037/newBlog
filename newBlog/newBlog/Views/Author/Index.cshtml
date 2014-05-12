@@ -1,0 +1,69 @@
+﻿@model IEnumerable<newBlog.Models.Author>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorEmal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorDOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorPic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorBio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorEmal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorDOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorPic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorBio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AuthorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AuthorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AuthorID })
+        </td>
+    </tr>
+}
+
+</table>

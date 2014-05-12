@@ -1,0 +1,71 @@
+﻿@model newBlog.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Post</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Author.AuthorUserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Author.AuthorUserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostAuthor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostAuthor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostedOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostedOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostText)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostText)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostPicture)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostPicture)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostTags)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostTags)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostLikes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostLikes)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PostID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

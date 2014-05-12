@@ -1,0 +1,94 @@
+﻿@model newBlog.Models.Post
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Post</legend>
+
+        @Html.HiddenFor(model => model.PostID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorID, "Author")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("AuthorID", String.Empty)
+            @Html.ValidationMessageFor(model => model.AuthorID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostTitle)
+            @Html.ValidationMessageFor(model => model.PostTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostAuthor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostAuthor)
+            @Html.ValidationMessageFor(model => model.PostAuthor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostedOn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostedOn)
+            @Html.ValidationMessageFor(model => model.PostedOn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostText)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostText)
+            @Html.ValidationMessageFor(model => model.PostText)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostPicture)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostPicture)
+            @Html.ValidationMessageFor(model => model.PostPicture)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostTags)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostTags)
+            @Html.ValidationMessageFor(model => model.PostTags)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostLikes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostLikes)
+            @Html.ValidationMessageFor(model => model.PostLikes)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
