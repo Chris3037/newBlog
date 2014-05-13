@@ -158,6 +158,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PostDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PostValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -234,22 +235,23 @@
       <DependentUpon>PostDataModel.edmx</DependentUpon>
       <LastGenOutput>PostDataModel.cs</LastGenOutput>
     </Content>
-    <None Include="Views\Scripts\jquery-1.8.2.intellisense.js" />
-    <Content Include="Views\Scripts\jquery-1.8.2.js" />
-    <Content Include="Views\Scripts\jquery-1.8.2.min.js" />
-    <None Include="Views\Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Views\Scripts\jquery-ui-1.8.24.js" />
-    <Content Include="Views\Scripts\jquery-ui-1.8.24.min.js" />
-    <Content Include="Views\Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Views\Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Views\Scripts\jquery.validate.js" />
-    <Content Include="Views\Scripts\jquery.validate.min.js" />
-    <Content Include="Views\Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Views\Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Views\Scripts\knockout-2.2.0.debug.js" />
-    <Content Include="Views\Scripts\knockout-2.2.0.js" />
-    <Content Include="Views\Scripts\modernizr-2.6.2.js" />
-    <Content Include="Views\Scripts\_references.js" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -271,6 +273,7 @@
     <Content Include="Views\Author\Create.cshtml" />
     <Content Include="Views\Author\Edit.cshtml" />
     <Content Include="Views\Author\Delete.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
