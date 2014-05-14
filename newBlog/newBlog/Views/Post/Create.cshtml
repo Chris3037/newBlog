@@ -8,7 +8,7 @@
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    @Html.ValidationSummary(false)
 
     <fieldset>
         <legend>Post</legend>
@@ -41,7 +41,8 @@
             @Html.LabelFor(model => model.PostedOn)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.PostedOn)
+            @Html.TextBox("PostedOn", DateTime.Now, new {disabled="disabled"})
+            @Html.Hidden("PostedOn", DateTime.Now)
             @Html.ValidationMessageFor(model => model.PostedOn)
         </div>
 
@@ -49,7 +50,7 @@
             @Html.LabelFor(model => model.PostText)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.PostText)
+            @Html.TextAreaFor(model => model.PostText, 15, 100, new object { })
             @Html.ValidationMessageFor(model => model.PostText)
         </div>
 
@@ -73,7 +74,8 @@
             @Html.LabelFor(model => model.PostLikes)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.PostLikes)
+            @Html.TextBox("PostLikes", 1, new {disabled="disabled"})
+            @Html.Hidden("PostLikes", 1 )
             @Html.ValidationMessageFor(model => model.PostLikes)
         </div>
 

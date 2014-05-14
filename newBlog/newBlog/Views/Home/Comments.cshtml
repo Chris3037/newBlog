@@ -1,0 +1,29 @@
+﻿@model newBlog.Models.Post
+
+
+<span class="showComments">Show @Model.Comments.Count() Comments
+</span>
+
+@foreach (var comment in Model.Comments)
+{
+    <div class="allComments">
+        @comment.CommentAuthor posted on @comment.CommentedOn.ToShortDateString()
+        <br />
+        @comment.CommentText
+        <br />
+    </div>
+}
+
+@using (Html.BeginForm("AddComment", "Home", FormMethod.Post, new { @class = "commentForm", data_id = Model.PostID }))
+{
+    <label for="author">Author</label>
+    <br />
+    <input type="text" name="author" />
+    <br />
+    <label for="body">Comment</label>
+    <br />
+    <textarea name="body"></textarea>
+    <br />
+    <input type="submit" value="Add Comment" />
+}
+<br />

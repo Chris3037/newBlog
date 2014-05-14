@@ -1,5 +1,60 @@
-﻿@{
+﻿@model IEnumerable<newBlog.Models.Post>
+
+@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@foreach (var post in Model)
+{
+    <section class="content">
+        <h1><a class="postTitle" href="@Url.Action("Details", "post", new { id = post.PostID })">@post.PostTitle</a></h1>
+        <small>By @post.PostAuthor,
+            @post.PostedOn.ToLongDateString()
+            <br />
+            <br />
+        </small>
+        @if (!string.IsNullOrEmpty(post.PostPicture))
+        {
+            <div class="postPicture">
+                <img src="@post.PostPicture" height="150"/>
+            </div>
+        }
+        <div class="postText">
+            @post.PostText
+        </div>
+        <br />
+        <div>
+            <span class="likes" data-id="@post.PostID">@post.PostLikes Likes</span>
+        </div>
+
+        <span class="showComments">Show @post.Comments.Count() Comments
+        </span>
+
+        <div class="comments">
+
+            @foreach (var comment in post.Comments)
+            {
+                <div class="allComments">
+                    @comment.CommentAuthor posted on @comment.CommentedOn.ToShortDateString()
+                    <br />
+                    @comment.CommentText
+                    <br />
+                </div>
+            }
+
+            @using (Html.BeginForm("AddComment", "Home", FormMethod.Post, new { @class = "commentForm", data_id = post.PostID }))
+            {
+                <label for="author">Author</label>
+                <br />
+                <input type="text" name="author" />
+                <br />
+                <label for="body">Comment</label>
+                <br />
+                <textarea name="body"></textarea>
+                <br />
+                <input type="submit" value="Add Comment" />
+            }
+            <br />
+        </div>
+    </section>
+}

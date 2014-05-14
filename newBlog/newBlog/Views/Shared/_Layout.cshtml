@@ -10,17 +10,16 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div id="content">
+    <div id="contentWrap">
     <div id="navBar">
         <a href="@Url.Action("index", "home")"><div class="navTab" id="nav1">Home</div></a>
         <a href="@Url.Action("index", "Post")"><div class="navTab" id="nav2">Dashboard</div></a>
-        <a href="@Url.Action("index", "Author")"><div class="navTab" id="nav3">Profile</div></a>
-        <div class="nav2Items">
+        @*<div class="nav2Items">
             <a href=""><div class="nav2Item">Dash Home</div></a>
             <a href=""><div class="nav2Item">Create</div></a>
-        </div>
+        </div>*@
+        <a href="@Url.Action("index", "Author")"><div class="navTab" id="nav3">Profile</div></a>
     </div>
-
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")

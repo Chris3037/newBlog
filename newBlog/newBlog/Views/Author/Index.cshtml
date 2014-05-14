@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<newBlog.Models.Author>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Authors";
 }
 
 <h2>Index</h2>
@@ -9,56 +9,50 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table style="text-align: center">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AuthorUserName)
+            User Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AuthorFirstName)
+            Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AuthorLastName)
+            Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AuthorEmal)
+            Date of Birth
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AuthorDOB)
+            Profile Picture
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AuthorPic)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AuthorBio)
+            Bio
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorUserName)
+        <td class="eachPost">
+            @item.AuthorUserName
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorFirstName)
+        <td class="eachPost">
+            @item.AuthorFirstName @item.AuthorLastName
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorLastName)
+        <td class="eachPost">
+            @item.AuthorEmal
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorEmal)
+        <td class="eachPost">
+            @item.AuthorDOB
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorDOB)
+        <td class="eachPost">
+            <img src="@item.AuthorPic"; style="height:75px" />
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorPic)
+        <td class="eachPost" style="width:100px">
+            @item.AuthorBio
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorBio)
-        </td>
-        <td>
+        <td class="eachPost">
             @Html.ActionLink("Edit", "Edit", new { id=item.AuthorID }) |
             @Html.ActionLink("Details", "Details", new { id=item.AuthorID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.AuthorID })

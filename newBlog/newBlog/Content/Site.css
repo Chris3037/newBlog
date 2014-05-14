@@ -64,13 +64,14 @@ textarea {
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 body {
-
+    background-image: url(images/background.png);
+	background-color: black;
+    background-repeat:no-repeat;
+	background-size: cover;
 }
 
-#content {
-    height: 1000px;
+#contentWrap {
     width: 75%;
-    background-color: #bfb775;
     margin-right: auto;
     margin-left: auto;
     border: 2px solid black;
@@ -93,14 +94,14 @@ body {
     line-height: 30px;
     background-color: white;
     color: black;
-    border-right: 2px solid black;
-    border-left: 2px solid black;
-    border-top: 2px solid black;
+    border: 2px solid black;
     margin: 2.5px 25px 0 25px;
     font-weight: bold;
 }
 
 .navTab:hover {
+    border: 2px solid white;
+    border-bottom: none;
     background-color: black;
     color: white;
     border-right: 2px solid white;
@@ -108,7 +109,7 @@ body {
 }
 
 #nav1:hover {
-    background-color: red;
+    background-color: black;
 }
 
 .nav2Items {
@@ -122,5 +123,80 @@ body {
     border-left: 2px solid black;
     font-weight: bold;
     margin: 0 auto 0 auto;
+}
 
+.dashItems {
+    margin:0 auto 10px auto;
+    text-align: center;
+    width: 99%;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.content {
+    background-color: #cacaca;
+    text-align: center;
+    margin: 10px 0 10px 15%;
+    border: 2px solid black;
+    border-radius: 20px;
+    display:inline-block;
+    width: 70%;
+}
+
+.postTitle {
+    display:inline-block;
+    color:black;
+    text-decoration: none;
+}
+
+.postTitle:hover {
+    text-decoration: underline;
+}
+
+.postPicture {
+    float: left;
+    border:2px solid black;
+    display:inline-block;
+    margin: 0    5px 0 5px;
+}
+
+.postText {
+    text-align: left;
+    margin: -5px 5px 0 5px;
+}
+
+.comments {
+    display: none;
+    width: 400px;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.allComments {
+    width: 300px;
+    margin: 10px auto 10px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.showComments {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.showComments:hover {
+    text-decoration: underline;
+}
+
+.likes {
+    font-weight: bold;
+    cursor: pointer;
+    color: green;
+}
+
+.likes:hover {
+    text-decoration: underline;
 }
