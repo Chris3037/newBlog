@@ -66,7 +66,7 @@ textarea {
 body {
     background-image: url(images/background.png);
 	background-color: black;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 	background-size: cover;
 }
 
@@ -199,4 +199,13 @@ body {
 
 .likes:hover {
     text-decoration: underline;
+}
+
+#detailsSettings {
+    background-color: white;
+    margin: 10px;
+}
+
+.display-label {
+    font-weight: bold;
 }

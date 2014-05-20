@@ -38,6 +38,7 @@ namespace newBlog.Controllers
             //Making a new comment
             var comment = new Models.Comment();
             comment.PostID = id;
+            //comment.CommentAuthor = values["author"];
             comment.CommentText = values["body"];
             comment.CommentedOn = DateTime.Now;
             comment.CommentLikes = 0;
@@ -46,9 +47,8 @@ namespace newBlog.Controllers
             db.SaveChanges();
             //Return to index
 
-            //Get te post
-            var post = db.Posts.Find(db);
-            return PartialView("Comments", post);
+            //Get the post
+            return PartialView("Comment", comment);
         }
     }
 }

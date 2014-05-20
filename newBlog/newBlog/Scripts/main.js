@@ -25,7 +25,10 @@
         var theForm = $(this);
         //$(this).serialize() sends the data
         $.post('/Home/AddComment/' + id, $(this).serialize(), function (data) {
-            $(theForm).parent().html(data);
+            //add th new comment before the form
+            theForm.before(data);
+            //clear out the values on the form
+            theForm.find('.commentPost').val('');
         });
     });
 });

@@ -1,0 +1,9 @@
+﻿@model newBlog.Models.Comment
+
+
+<div class="allComments">
+    @Model.CommentAuthor posted on @Model.CommentedOn.ToShortDateString()
+    <br />
+    @Model.CommentText
+    <br />
+</div>

@@ -137,6 +137,7 @@
     <Compile Include="Models\Author.cs">
       <DependentUpon>PostDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthorValidation.cs" />
     <Compile Include="Models\Comment.cs">
       <DependentUpon>PostDataModel.tt</DependentUpon>
     </Compile>
@@ -274,6 +275,8 @@
     <Content Include="Views\Author\Edit.cshtml" />
     <Content Include="Views\Author\Delete.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Comments.cshtml" />
+    <Content Include="Views\Home\Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

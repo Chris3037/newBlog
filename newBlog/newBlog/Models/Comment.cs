@@ -16,7 +16,7 @@ namespace newBlog.Models
     {
         public int CommentID { get; set; }
         public int PostID { get; set; }
-        public int CommentAuthor { get; set; }
+        public Nullable<int> CommentAuthor { get; set; }
         public System.DateTime CommentedOn { get; set; }
         public string CommentText { get; set; }
         public string CommentPicture { get; set; }
